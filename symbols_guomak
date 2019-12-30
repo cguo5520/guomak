@@ -1,0 +1,84 @@
+// Guomak symbols modified to include an additional layer for software development
+// modified from 2006-01-01 Shai Coleman, http://colemak.com/
+// created 2019-12-09 Charles Guo
+// U2205 is the empty set in utf8. Put it as a placeholder
+// Layer 3 is symbolic
+// Layer 4 is numeric
+
+xkb_symbols "guomak" {
+  name[Group1]= "English (Guomak)";
+
+  key.type[group1]="FOUR_LEVEL_GUOMAK";
+  key <TLDE> { [ grave, asciitilde ] };
+  key <AE01> { [ 1, exclam ] };
+  key <AE02> { [ 2, at ] };
+  key <AE03> { [ 3, numbersign ] };
+  key <AE04> { [ 4, dollar ] };
+  key <AE05> { [ 5, percent ] };
+
+  key <AE06> { [ 6, asciicircum ] };
+  key <AE07> { [ 7, ampersand ] };
+  key <AE08> { [ 8, asterisk ] };
+  key <AE09> { [ 9, parenleft ] };
+  key <AE10> { [ 0, parenright ] };
+  key <AE11> { [ minus, underscore ] };
+  key <AE12> { [ equal, plus ] };
+  key <BKSL> { [ backslash, bar ] };
+
+  key <AD01> { [ q, Q, plus, exclam ] };
+  key <AD02> { [ w, W, minus, at ] };
+  key <AD03> { [ f, F, asterisk, numbersign ] };
+  key <AD04> { [ p, P, slash, dollar ] };
+  key <AD05> { [ g, G, percent, percent ] };
+
+  key <AD06> { [ j, J, asciicircum, asciicircum ] };
+  key <AD07> { [ l, L, ampersand, 7 ] };
+  key <AD08> { [ u, U, asterisk, 8 ] };
+  key <AD09> { [ y, Y, parenleft, 9 ] };
+  key <AD10> { [ semicolon, colon, parenright, 0 ] };
+
+  // This used to be bracketleft 
+  key <AD11> { [ BackSpace, Delete, BackSpace, BackSpace ] };
+
+  // This used to be bracketright
+  key <AD12> { [ ISO_Level3_Shift, ISO_Level3_Shift, ISO_Level3_Shift, ISO_Level3_Shift ] };
+
+  key <AC01> { [ a, A, less ] };
+  key <AC02> { [ r, R, braceleft ] };
+  key <AC03> { [ s, S, bracketleft ] };
+  key <AC04> { [ t, T, parenleft ] };
+  key <AC05> { [ d, D, underscore ] };
+  
+  key <AC06> { [ h, H, at, U2205 ] };
+  key <AC07> { [ n, N, parenright, 4 ] };
+  key <AC08> { [ e, E, bracketright, 5 ] };
+  key <AC09> { [ i, I, braceright, 6 ] };
+  key <AC10> { [ o, O, greater, 7 ] };
+  key <AC11> { [ apostrophe, quotedbl, equal, U2205 ] };
+
+  key <AB01> { [ z, Z, U2205, U2205 ] };
+  key <AB02> { [ x, X, U2205, U2205 ] };
+  key <AB03> { [ c, C, U2205, U2205 ] };
+  key <AB04> { [ v, V, U2205, U2205 ] };
+  key <AB05> { [ b, B, U2205, U2205 ] };
+
+  key <AB06> { [ k, K, U2205, U2205 ] };
+  key <AB08> { [ comma, less, Down, 1 ] };
+  key <AB09> { [ period, greater, Up, 2 ] };
+  key <AB10> { [ slash, question, Right, 3 ] };
+  key <AB07> { [ m, M, Left, 0 ] };
+
+  key <SPCE> { [ space, space, space, space] };
+  key <RTRN> { [ Return, Return, Return, Return ] };
+
+  include "capslock(ctrl_modifier)"
+
+  // does replace actually do anything more than key by itself?
+  key <LCTL>  { [ Tab,  ISO_Left_Tab ] };
+
+  key <TAB> { [ ISO_Level3_Shift, ISO_Level3_Shift, Tab, ISO_Left_Tab ] };
+  
+  // Both shifts together activate level 4
+  key <RTSH> { [ Shift_R, ISO_Level3_Shift, Shift_R, Shift_R ] };
+  key <LFSH> { [ Shift_L, ISO_Level3_Shift, Shift_L, Shift_L ] };
+};
