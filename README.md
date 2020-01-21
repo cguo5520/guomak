@@ -1,6 +1,7 @@
 # guomak
 Modified Colemak Linux for Developers
 
+## Linux
 To install:
 ```
 cd guomak
@@ -13,6 +14,10 @@ cd guomak
 sudo bash UNINSTALL.sh
 ```
 
+## Mac
+Install karabiner, then move the karabiner.json file to ~/.config/karabiner/karabiner.json
+
 TODO:
 Unit tests with test files
 Installing and then uninstalling creates empty lines
+Polish up the mac setup. Probably need to add level2?
