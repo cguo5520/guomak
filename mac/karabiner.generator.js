@@ -22,6 +22,7 @@ const simple_modifications = level1.map(([from, to]) => {
   };
 });
 
+const LEVEL_3_MODIFIER = 'right_command';
 const level3Rules = {
   description: "Level 3 keybindings",
   manipulators: level3.map(([from, to]) => {
@@ -31,7 +32,7 @@ const level3Rules = {
         "key_code": from,
         "modifiers": {
           "mandatory": [
-            "right_command"
+            LEVEL_3_MODIFIER
           ],
           "optional": [
             "any"
@@ -56,7 +57,7 @@ const level4Rules = {
         "key_code": from.toUpperCase(),
         "modifiers": {
           "mandatory": [
-            "right_command"
+            LEVEL_3_MODIFIER
           ],
           "optional": [
             "any"
