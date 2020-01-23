@@ -15,6 +15,7 @@ sudo bash UNINSTALL.sh
 ```
 
 ## Mac
+Generate karabiner.json with `cd mac; node karabiner.generator`
 Install karabiner, then move the karabiner.json file to ~/.config/karabiner/karabiner.json
 
 TODO:
