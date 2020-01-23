@@ -1,22 +1,22 @@
-q +
-w -
-e *
-r /
-t %
-y ^
-u &
-i *
-o (
-p )
-[ Backspace
-a <
-s {
-d [
-f (
-g _ 
-h @
-j )
-k ]
-l }
-; >
-' =
+q keypad_plus
+w hyphen -
+e 8 shift *
+r slash
+t 5 shift %
+y 6 shift ^
+u 7 shift &
+i 8 shift *
+o 9 shift (
+p 0 shift )
+open_bracket delete_or_backspace
+a comma shift <
+s open_bracket shift {
+d open_bracket [
+f 9 shift (
+g hyphen shift _ 
+h 2 shift @
+j 0 shift )
+k close_bracket ]
+l close_bracket shift }
+semicolon period shift >
+quote equal_sign

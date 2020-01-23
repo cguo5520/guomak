@@ -1,18 +1,18 @@
 m 0
-, 1
-. 2
-/ 3
+comma 1
+period 2
+slash 3
 j 4
 k 5
 l 6
-; 7
+semicolon 7
 u 7
 i 8
 o 9
 p 0
-q !
-w @
-e #
-r $
-t %
-y ^
+q 1 shift
+w 2 shift
+e 3 shift
+r 4 shift
+t 5 shift
+y 6 shift

@@ -1,17 +1,19 @@
 const fs = require('fs');
 
+const LEVEL_3_MODIFIER_KEYS = ['close_bracket', 'tab'];
+
 function parseKeybindings(file) {
   return file.toString().split('\n').map(line => line.split(' '))
 }
 
-let level1 = fs.readFileSync('./level1');
-level1 = parseKeybindings(level1);
-let level3 = fs.readFileSync('./level3');
-level3 = parseKeybindings(level3);
-let level4 = fs.readFileSync('./level4');
-level4 = parseKeybindings(level4);
+const level1 = fs.readFileSync('./level1');
+const level1KeyTuples = parseKeybindings(level1);
+const level3 = fs.readFileSync('./level3');
+const level3KeyTuples = parseKeybindings(level3);
+const level4 = fs.readFileSync('./level4');
+const level4KeyTuples = parseKeybindings(level4);
 
-const simple_modifications = level1.map(([from, to]) => {
+const simple_modifications = level1KeyTuples.map(([from, to]) => {
   return {
     "from": {
       "key_code": from,
@@ -22,55 +24,91 @@ const simple_modifications = level1.map(([from, to]) => {
   };
 });
 
-const LEVEL_3_MODIFIER = 'right_command';
-const level3Rules = {
-  description: "Level 3 keybindings",
-  manipulators: level3.map(([from, to]) => {
-    return {
+const LEVEL_3_MODIFIER_NAME = 'virtual_mod_0';
+const virtualModManipulators = LEVEL_3_MODIFIER_KEYS.map(key => {
+  return {
+    "type": "basic",
+    "from": {
+      "key_code": key,
+      "modifiers": {
+        "mandatory": [],
+        "optional": [
+          "any"
+        ]
+      }
+    },
+    "to": [
+      {
+        "set_variable": {
+          "name": LEVEL_3_MODIFIER_NAME,
+          "value": 1
+        }
+      }
+    ],
+    "to_after_key_up": [
+      {
+        "set_variable": {
+          "name": LEVEL_3_MODIFIER_NAME,
+          "value": 0
+        }
+      }
+    ]
+  };
+});
+
+const virtualModRule = {
+  description: "Virtual Modifier on Close Bracket",
+  manipulators: virtualModManipulators,
+};
+
+function keyTuplesToMani(keyTuples, level4Flag) {
+  return keyTuples.map(([from, to, shift]) => {
+    const mani = {
       "type": "basic",
       "from": {
         "key_code": from,
-        "modifiers": {
-          "mandatory": [
-            LEVEL_3_MODIFIER
-          ],
-          "optional": [
-            "any"
-          ]
-        }
       },
       "to": [
         {
           "key_code": to
         }
       ],
+      "conditions": [
+        {
+          "type": "variable_if",
+          "name": LEVEL_3_MODIFIER_NAME,
+          "value": 1
+        }
+      ]
+    };
+
+    if (level4Flag) {
+      mani.from.modifiers = {
+        "mandatory": [
+          'left_shift'
+        ],
+        "optional": [
+          "any"
+        ]
+      };
     }
-  }),
+
+    if (shift === 'shift') {
+      mani.to[0].modifiers = ['left_shift'];
+    }
+    return mani;
+  });
+}
+
+// We could map right shift to be a duplicate left shift, and then map stuff onto right shift so there's no conflict.
+const level3Rules = {
+  description: "Level 3 keybindings",
+  manipulators: keyTuplesToMani(level3KeyTuples)
 };
 
 const level4Rules = {
   description: "Level 4 keybindings",
-  manipulators: level4.map(([from, to]) => {
-    return {
-      "type": "basic",
-      "from": {
-        "key_code": from.toUpperCase(),
-        "modifiers": {
-          "mandatory": [
-            LEVEL_3_MODIFIER
-          ],
-          "optional": [
-            "any"
-          ]
-        }
-      },
-      "to": [
-        {
-          "key_code": to
-        }
-      ],
-    }
-  }),
+  manipulators: keyTuplesToMani(level4KeyTuples, true)
 };
 
 const complex_modifications = {
@@ -82,7 +120,7 @@ const complex_modifications = {
     "mouse_motion_to_scroll.speed": 100
   },
   "rules": [
-    level3Rules, level4Rules
+    virtualModRule, level3Rules, level4Rules
   ]
 };
 
