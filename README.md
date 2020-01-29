@@ -6,6 +6,9 @@ To install:
 ```
 cd guomak
 sudo bash INSTALL.sh
+
+# restart your keyboard with
+sudo udevadm trigger --subsystem-match=input --action=change
 ```
 
 To uninstall:
