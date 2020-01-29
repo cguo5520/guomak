@@ -20,3 +20,4 @@ k close_bracket ]
 l close_bracket shift }
 semicolon period shift >
 quote equal_sign
+spacebar equal_sign

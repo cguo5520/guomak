@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-const LEVEL_3_MODIFIER_KEYS = ['close_bracket', 'tab'];
+const LEVEL_3_MODIFIER_KEYS = ['close_bracket'];
 
 function parseKeybindings(file) {
   return file.toString().split('\n').map(line => line.split(' '))

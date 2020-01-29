@@ -68,15 +68,15 @@ xkb_symbols "guomak" {
   key <AB10> { [ slash, question, Right, 3 ] };
   key <AB07> { [ m, M, Left, 0 ] };
 
-  key <SPCE> { [ space, space, space, space] };
+  key <SPCE> { [ space, space, equal, equal] };
   key <RTRN> { [ Return, Return, Return, Return ] };
 
   include "capslock(ctrl_modifier)"
 
-  // does replace actually do anything more than key by itself?
-  key <LCTL>  { [ Tab,  ISO_Left_Tab ] };
+// Not using this for now
+// key <LCTL>  { [ Tab,  ISO_Left_Tab ] };
 
-  key <TAB> { [ ISO_Level3_Shift, ISO_Level3_Shift, Tab, ISO_Left_Tab ] };
+  key <TAB> { [ Tab,  ISO_Left_Tab, Tab, ISO_Left_Tab ] };
   
   // Both shifts together activate level 4
   key <RTSH> { [ Shift_R, ISO_Level3_Shift, Shift_R, Shift_R ] };
