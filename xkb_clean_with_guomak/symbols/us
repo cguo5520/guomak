@@ -1973,6 +1973,9 @@ xkb_symbols "de_se_fi"  {
 
 
 
+
+
+
 // Guomak symbols modified to include an additional layer for software development
 // modified from 2006-01-01 Shai Coleman, http://colemak.com/
 // created 2019-12-09 Charles Guo
