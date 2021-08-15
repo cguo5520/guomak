@@ -25,7 +25,7 @@ xkb_symbols "guomak" {
   key <AE12> { [ equal, plus ] };
   key <BKSL> { [ backslash, bar ] };
 
-  key <AD01> { [ q, Q, plus, exclam ] };
+  key <AD01> { [ q, Q, plus, numbersign, numbersign ] };
   key <AD02> { [ w, W, minus, at ] };
   key <AD03> { [ f, F, asterisk, numbersign ] };
   key <AD04> { [ p, P, slash, dollar ] };
@@ -81,4 +81,6 @@ xkb_symbols "guomak" {
   // Both shifts together activate level 4
   key <RTSH> { [ Shift_R, ISO_Level3_Shift, Shift_R, Shift_R ] };
   key <LFSH> { [ Shift_L, ISO_Level3_Shift, Shift_L, Shift_L ] };
+
+  include "level5(ralt_switch)"
 };
