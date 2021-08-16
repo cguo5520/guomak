@@ -8,14 +8,14 @@ cp -R xkb_guomak/* /usr/share/X11/xkb
 
 rm -rf /usr/share/X11/xkb/symbols
 cp -R xkb_clean_with_guomak/symbols /usr/share/X11/xkb/symbols
-rm /usr/share/X11/xkb/symbols/us
-cp -R xkb_guomak/symbols/us /usr/share/X11/xkb/symbols/us
+# rm /usr/share/X11/xkb/symbols/us
+# cp -R xkb_guomak/symbols/us /usr/share/X11/xkb/symbols/us
 
 rm -rf /usr/share/X11/xkb/compat
 cp -R xkb_clean_with_guomak/compat /usr/share/X11/xkb/compat
 
 #find /usr/share/X11/xkb/symbols -name 'a*' -delete
-#find /usr/share/X11/xkb/symbols -name 'b*' -delete
+find /usr/share/X11/xkb/symbols -name 'b*' -delete
 #find /usr/share/X11/xkb/symbols -name 'c*' -delete
 #find /usr/share/X11/xkb/symbols -name 'd*' -delete
 #find /usr/share/X11/xkb/symbols -name 'e*' -delete

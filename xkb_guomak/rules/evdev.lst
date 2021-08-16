@@ -195,7 +195,7 @@
 
 ! variant
   colemak         us: English (Colemak)
-  guomak us: English (Guomak I don't think this is used)
+  guomak          us: English (Guomak I don't think this is used)
 
 ! option
   terminate            Key sequence to kill the X server
