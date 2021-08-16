@@ -1,0 +1,12 @@
+This directory lists sets of rules which can be used to obtain an exact XKB
+configuration.
+
+## Charles Notes
+evdev.lst seems to be mostly for UI selection of layouts
+
+evdev and evdev.xml contain logic for how gnome loads symbols, compat, etc.
+
+the distinction of responsibilities between evdev and evdev.xml is unclear
+
+It looks like evdev is more important for `setxkbmap -print -verbose 10` and loading the display manager.
+If evdev is not valid, the display manager doesn't load, but the layout still works in linux recovery mode.
