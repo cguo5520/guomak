@@ -73,23 +73,7 @@
          sun_type6_jp_usb sun_type6_unix_usb sun_type7_jp_usb \
          sun_type7_usb sun_type7_euro_usb sun_type7_unix_usb
 
-! $sun_jp = sun_type6_jp sun_type6_jp_usb sun_type7_jp_usb
-
-// Sun Type_6_7 keyboards with custom layouts
-! $sun_custom = ara be br ca ch cz de dk \
-                ee es fi fr gb gr it jp \
-                kr lt lv nl no pl pt ro \
-                ru se sk tr tw ua us
-
-! $sun_var =  sun_type6 sun_type6_suncompat sun_type6_de sun_type6_fr \
-              sun_type7 sun_type7_suncompat suncompat
-
-! $sun_compat = sun_type6 sun_type6_suncompat sun_type7_suncompat suncompat
-
-
 ! $evdevkbds = ibm_spacesaver
-
-! $dvoraklayouts = br ca de ee es fr gb no pl se us
 
 ! model		=	keycodes
   applealu_jis	=	evdev+macintosh(jisevdev)
@@ -177,61 +161,7 @@
 
 ! model		layout		=	symbols
 
-! layout	variant		=	compat
-  de		neo			=	+caps(caps_lock)+misc(assign_shift_left_action)+level5(level5_lock)
-  de		adnw			=	+caps(caps_lock)+misc(assign_shift_left_action)+level5(level5_lock)
-  de		koy			=	+caps(caps_lock)+misc(assign_shift_left_action)+level5(level5_lock)
-  de		bone			=	+caps(caps_lock)+misc(assign_shift_left_action)+level5(level5_lock)
-  de		bone_eszett_home			=	+caps(caps_lock)+misc(assign_shift_left_action)+level5(level5_lock)
-  de		neo_qwertz			=	+caps(caps_lock)+misc(assign_shift_left_action)+level5(level5_lock)
-  de		neo_qwerty			=	+caps(caps_lock)+misc(assign_shift_left_action)+level5(level5_lock)
-  jp        $sun_compat =   complete+japan(kana_lock)
-
-! layout[1]	variant[1]	=	compat
-  de		neo			=	+caps(caps_lock)+misc(assign_shift_left_action)+level5(level5_lock)
-  de		adnw			=	+caps(caps_lock)+misc(assign_shift_left_action)+level5(level5_lock)
-  de		koy			=	+caps(caps_lock)+misc(assign_shift_left_action)+level5(level5_lock)
-  de		bone			=	+caps(caps_lock)+misc(assign_shift_left_action)+level5(level5_lock)
-  de		bone_eszett_home			=	+caps(caps_lock)+misc(assign_shift_left_action)+level5(level5_lock)
-  de		neo_qwertz			=	+caps(caps_lock)+misc(assign_shift_left_action)+level5(level5_lock)
-  de		neo_qwerty			=	+caps(caps_lock)+misc(assign_shift_left_action)+level5(level5_lock)
-  jp       $sun_compat =   complete+japan(kana_lock)
-
-! layout[2]	variant[2]	=	compat
-  de		neo			=	+caps(caps_lock):2+misc(assign_shift_left_action):2+level5(level5_lock):2
-  de		adnw			=	+caps(caps_lock):2+misc(assign_shift_left_action):2+level5(level5_lock):2
-  de		koy			=	+caps(caps_lock):2+misc(assign_shift_left_action):2+level5(level5_lock):2
-  de		bone			=	+caps(caps_lock):2+misc(assign_shift_left_action):2+level5(level5_lock):2
-  de		bone_eszett_home			=	+caps(caps_lock):2+misc(assign_shift_left_action):2+level5(level5_lock):2
-  de		neo_qwertz			=	+caps(caps_lock):2+misc(assign_shift_left_action):2+level5(level5_lock):2
-  de		neo_qwerty			=	+caps(caps_lock):2+misc(assign_shift_left_action):2+level5(level5_lock):2
-  jp       $sun_compat  =   +complete+japan(kana_lock):2
-
-! layout[3]	variant[3]	=	compat
-  de		neo			=	+caps(caps_lock):3+misc(assign_shift_left_action):3+level5(level5_lock):3
-  de		adnw			=	+caps(caps_lock):3+misc(assign_shift_left_action):3+level5(level5_lock):3
-  de		koy			=	+caps(caps_lock):3+misc(assign_shift_left_action):3+level5(level5_lock):3
-  de		bone			=	+caps(caps_lock):3+misc(assign_shift_left_action):3+level5(level5_lock):3
-  de		bone_eszett_home			=	+caps(caps_lock):3+misc(assign_shift_left_action):3+level5(level5_lock):3
-  de		neo_qwertz			=	+caps(caps_lock):3+misc(assign_shift_left_action):3+level5(level5_lock):3
-  de		neo_qwerty			=	+caps(caps_lock):3+misc(assign_shift_left_action):3+level5(level5_lock):3
-  jp       $sun_compat  =   +complete+japan(kana_lock):3
-
-! layout[4]	variant[4]	=	compat
-  de		neo			=	+caps(caps_lock):4+misc(assign_shift_left_action):4+level5(level5_lock):4
-  de		adnw			=	+caps(caps_lock):4+misc(assign_shift_left_action):4+level5(level5_lock):4
-  de		koy			=	+caps(caps_lock):4+misc(assign_shift_left_action):4+level5(level5_lock):4
-  de		bone			=	+caps(caps_lock):4+misc(assign_shift_left_action):4+level5(level5_lock):4
-  de		bone_eszett_home			=	+caps(caps_lock):4+misc(assign_shift_left_action):4+level5(level5_lock):4
-  de		neo_qwertz			=	+caps(caps_lock):4+misc(assign_shift_left_action):4+level5(level5_lock):4
-  de		neo_qwerty			=	+caps(caps_lock):4+misc(assign_shift_left_action):4+level5(level5_lock):4
-  jp       $sun_compat  =   +complete+japan(kana_lock):4
-
 ! model		layout		=	compat
-  pc98		nec_vndr/jp	=	pc98(basic)
-  *		jp		=	complete+japan
-  olpc          *               =       olpc
-  olpcm         *               =       olpc
   *		*		=	complete
 
 ! model		layout[1]	=	compat
@@ -245,16 +175,6 @@
   
 ! option	=	symbols
   terminate:ctrl_alt_bksp =	+terminate(ctrl_alt_bksp)
-
-! option	=	compat
-  grp_led:num		=	+lednum(group_lock)
-  grp_led:caps		=	+ledcaps(group_lock)
-  grp_led:scroll	=	+ledscroll(group_lock)
-  mod_led:compose	=	+ledcompose(compose)
-  japan:kana_lock	=	+japan(kana_lock)
-  caps:shiftlock	=	+ledcaps(shift_lock)
-  grab:break_actions    =       +xfree86(grab_break)
-
 
 ! option	=	types
   caps:internal			=	+caps(internal)

@@ -32,7 +32,14 @@ setxkbmap guomak -print | xkbcomp - - | xkbprint - - | ps2pdf - > map_keyboard.p
 ```
 
 ### XKB quickstart
-* Compat (usually complete) has the modifier map
+X Server -> dconf looks up what xkb settings to use? -> rules/evdev matches model layout variant etc. to files like compat, symbols, etc. 
+
+* compat: modifiers
+* geometry: only for printing layout pdf
+* keycodes: low level translation of keypress event to keycode (used in symbols?)
+* rules: like the main directory of xkb
+* symbols: actual layout
+* types: used by symbols
 
 ## Mac
 Generate karabiner.json with `cd mac; node karabiner.generator`
@@ -40,7 +47,6 @@ Install karabiner, then move the karabiner.json file to ~/.config/karabiner/kara
 
 TODO:
 Unit tests with test files
-Installing and then uninstalling creates empty lines
 Polish up the mac setup. Probably need to add level2?
 
 ## FAQ
