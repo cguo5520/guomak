@@ -73,14 +73,19 @@ xkb_symbols "guomak" {
 
   include "capslock(ctrl_modifier)"
 
-// Not using this for now
-// key <LCTL>  { [ Tab,  ISO_Left_Tab ] };
-
-  key <TAB> { [ Tab,  ISO_Left_Tab, Tab, ISO_Left_Tab ] };
   
   // Both shifts together activate level 4
   key <RTSH> { [ Shift_R, ISO_Level3_Shift, Shift_R, Shift_R ] };
   key <LFSH> { [ Shift_L, ISO_Level3_Shift, Shift_L, Shift_L ] };
 
   include "level5(ralt_switch)"
+
+  replace key <TAB> {
+    type[Group1]="ONE_LEVEL",
+    symbols[Group1] = [ ISO_Level5_Shift ]
+  };
+
+  replace key <LCTL> {
+    [ Tab,  ISO_Left_Tab, Tab, ISO_Left_Tab ]
+  };
 };
