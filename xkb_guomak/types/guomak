@@ -7,14 +7,12 @@ partial default xkb_types "default" {
 	map[None] = Level1;
 	map[Shift] = Level2;
 	map[LevelThree] = Level3;
-	map[Shift+LevelThree] = Level4;
-	map[LevelFive] = Level5;
+	map[LevelFive] = Level4;
 
 	level_name[Level1] = "Base";
 	level_name[Level2] = "Shift";
 	level_name[Level3] = "Symbolic";
-	level_name[Level4] = "Numeric";
-	level_name[Level5] = "Five";
+	level_name[Level4] = "Misc";
     };
 
 };
