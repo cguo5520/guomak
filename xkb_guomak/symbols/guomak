@@ -1,9 +1,6 @@
 // Guomak symbols modified to include an additional layer for software development
 // modified from 2006-01-01 Shai Coleman, http://colemak.com/
 // created 2019-12-09 Charles Guo
-// U2205 is the empty set in utf8. Put it as a placeholder
-// Layer 3 is symbolic
-// Layer 4 is numeric
 
 xkb_symbols "guomak" {
   name[Group1]= "English (Guomak)";
@@ -18,69 +15,73 @@ xkb_symbols "guomak" {
 
   key <AE06> { [ 6, asciicircum ] };
   key <AE07> { [ 7, ampersand ] };
-  key <AE08> { [ 8, asterisk ] };
-  key <AE09> { [ 9, parenleft ] };
-  key <AE10> { [ 0, parenright ] };
+  key <AE08> { [ 8 ] };
+  key <AE09> { [ 9 ] };
+  key <AE10> { [ 0 ] };
   key <AE11> { [ minus, underscore ] };
   key <AE12> { [ equal, plus ] };
   key <BKSL> { [ backslash, bar ] };
 
-  key <AD01> { [ q, Q, plus, numbersign, numbersign ] };
-  key <AD02> { [ w, W, minus, at ] };
-  key <AD03> { [ f, F, asterisk, numbersign ] };
-  key <AD04> { [ p, P, slash, dollar ] };
-  key <AD05> { [ g, G, percent, percent ] };
+  key <AD01> { [ q, Q, plus, 0 ] };
+  key <AD02> { [ w, W, minus, 1 ] };
+  key <AD03> { [ f, F, asterisk, 2 ] };
+  key <AD04> { [ p, P, slash, 3 ] };
+  key <AD05> { [ g, G, percent, 4 ] };
 
-  key <AD06> { [ j, J, asciicircum, asciicircum ] };
-  key <AD07> { [ l, L, ampersand, 7 ] };
-  key <AD08> { [ u, U, asterisk, 8 ] };
-  key <AD09> { [ y, Y, parenleft, 9 ] };
-  key <AD10> { [ semicolon, colon, parenright, 0 ] };
+  key <AD06> { [ j, J, NoSymbol, asciicircum ] };
+  key <AD07> { [ l, L, NoSymbol, ampersand ] };
+  key <AD08> { [ u, U, NoSymbol, bar ] };
+  key <AD09> { [ y, Y, NoSymbol, exclam ] };
+  key <AD10> { [ semicolon, colon, NoSymbol, numbersign ] };
 
   // This used to be bracketleft 
-  key <AD11> { [ BackSpace, Delete, BackSpace, BackSpace ] };
+  key <AD11> { [ BackSpace, Delete, BackSpace, Delete ] };
 
   // This used to be bracketright
-  key <AD12> { [ ISO_Level3_Shift, ISO_Level3_Shift, ISO_Level3_Shift, ISO_Level3_Shift ] };
+  key <AD12> { [ ISO_Level3_Shift, equal, NoSymbol, Tab ] };
 
-  key <AC01> { [ a, A, less ] };
-  key <AC02> { [ r, R, braceleft ] };
-  key <AC03> { [ s, S, bracketleft ] };
-  key <AC04> { [ t, T, parenleft ] };
-  key <AC05> { [ d, D, underscore ] };
+  key <AC01> { [ a, A, less, 5 ] };
+  key <AC02> { [ r, R, braceleft, 6 ] };
+  key <AC03> { [ s, S, bracketleft, 7 ] };
+  key <AC04> { [ t, T, parenleft, 8 ] };
+  key <AC05> { [ d, D, underscore, 9 ] };
   
-  key <AC06> { [ h, H, at, U2205 ] };
-  key <AC07> { [ n, N, parenright, 4 ] };
-  key <AC08> { [ e, E, bracketright, 5 ] };
-  key <AC09> { [ i, I, braceright, 6 ] };
-  key <AC10> { [ o, O, greater, 7 ] };
-  key <AC11> { [ apostrophe, quotedbl, equal, U2205 ] };
+  key <AC06> { [ h, H, at, dollar ] };
+  key <AC07> { [ n, N, parenright, Left ] };
+  key <AC08> { [ e, E, bracketright, Down ] };
+  key <AC09> { [ i, I, braceright, Up ] };
+  key <AC10> { [ o, O, greater, Right ] };
+  key <AC11> { [ apostrophe, quotedbl, NoSymbol, Tab ] };
 
-  key <AB01> { [ z, Z, U2205, U2205 ] };
-  key <AB02> { [ x, X, U2205, U2205 ] };
-  key <AB03> { [ c, C, U2205, U2205 ] };
-  key <AB04> { [ v, V, U2205, U2205 ] };
-  key <AB05> { [ b, B, U2205, U2205 ] };
+  key <AB01> { [ z, Z ] };
+  key <AB02> { [ x, X ] };
+  key <AB03> { [ c, C ] };
+  key <AB04> { [ v, V ] };
+  key <AB05> { [ b, B ] };
 
-  key <AB06> { [ k, K, U2205, U2205 ] };
-  key <AB08> { [ comma, less, Down, 1 ] };
-  key <AB09> { [ period, greater, Up, 2 ] };
-  key <AB10> { [ slash, question, Right, 3 ] };
-  key <AB07> { [ m, M, Left, 0 ] };
+  key <AB06> { [ k, K ] };
+  key <AB07> { [ m, M ] };
+  key <AB08> { [ comma, less ] };
+  key <AB09> { [ period, greater ] };
+  // Used to be slash, question
+  key <AB10> { [ ISO_Level5_Shift, question, NoSymbol, question ] };
 
-  key <SPCE> { [ space, space, equal, equal] };
-  key <RTRN> { [ Return, Return, Return, Return ] };
+  key <SPCE> { [ space, space, equal, Escape ] };
+  key <RTRN> { [ Return, Return ] };
 
   include "capslock(ctrl_modifier)"
 
-// Not using this for now
-// key <LCTL>  { [ Tab,  ISO_Left_Tab ] };
+  key <RTSH> { [ Shift_R, Shift_R, Shift_R, Shift_R ] };
+  key <LFSH> { [ Shift_L, Shift_L, Shift_L, Shift_L ] };
 
-  key <TAB> { [ Tab,  ISO_Left_Tab, Tab, ISO_Left_Tab ] };
-  
-  // Both shifts together activate level 4
-  key <RTSH> { [ Shift_R, ISO_Level3_Shift, Shift_R, Shift_R ] };
-  key <LFSH> { [ Shift_L, ISO_Level3_Shift, Shift_L, Shift_L ] };
+  include "level5(modifier_mapping)"
 
-  include "level5(ralt_switch)"
+  replace key <TAB> {
+    type[Group1]="FOUR_LEVEL_GUOMAK",
+    symbols[Group1] = [ ISO_Level5_Shift, ISO_Left_Tab, Tab, NoSymbol ]
+  };
+
+  replace key <LCTL> {
+    [ Tab,  ISO_Left_Tab ]
+  };
 };

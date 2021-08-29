@@ -16,70 +16,14 @@
 // PC models
 ! $pcmodels = pc101 pc102 pc104 pc105
 
-// Jolla devices and keyboards
-! $jollamodels = jollasbj
-
-// Microsoft models (using MS geometry)
-! $msmodels = microsoft microsoft4000 microsoft7000 microsoftpro microsoftprousb microsoftprose microsoftsurface
-
-// Nokia devices and keyboards
-! $nokiamodels = nokiasu8w nokiarx44 nokiarx51
-
-// PC geometries - they have special geometry but symbols are mostly pc105
-! $pcgeometries = latitude
-
-// TypeMatrix geometries
-! $tmgeometries = tm2020 tm2030PS2 tm2030USB tm2030USB-102 tm2030USB-106
-
-// Layouts that provide further specializations for the OLPC
-! $olpclayouts = af am ara br ca es et fr it kh kz in mn np ru th tr us 
-
-! $macbooks = macbook78 macbook79
-! $maclaptop = ibook powerbook macbook78 macbook79
-! $applealu = applealu_ansi applealu_iso applealu_jis
-! $macs = macintosh macintosh_old ibook powerbook macbook78 macbook79
-
-! $macvendorlayouts = ch de dk fi fr gb is it latam nl no pt se us
-
 ! $azerty = be fr
 ! $qwertz = al cz de hr hu ro si sk 
 
-
-// all layouts with 3rd and 4th groups
-! $threelevellayouts = al az \
-              be br bt \
-              ca ch cs cz \
-              de dk \
-              ee es \
-              fi fo fr \
-              gb gr \
-              hu \
-              ie ir is it \
-              latam \
-              lk lt \
-              mn mt \
-              nl no \
-              pl pt \
-              ro \
-              se sk \
-              tr \
-              us \
-              vn \
-              za
-
 ! $thinkpads = thinkpad thinkpad60 thinkpadz60
-
-! $sun = sun_type6_jp sun_type6_usb sun_type6_euro_usb \
-         sun_type6_jp_usb sun_type6_unix_usb sun_type7_jp_usb \
-         sun_type7_usb sun_type7_euro_usb sun_type7_unix_usb
 
 ! $evdevkbds = ibm_spacesaver
 
 ! model		=	keycodes
-  applealu_jis	=	evdev+macintosh(jisevdev)
- $jollamodels   =       evdev+jolla(jolla)
-  olpc          =       evdev+olpc(olpc)
-  olpcm         =       evdev+olpc(olpcm)
   *		=	evdev
 
 ! layout[1]	=	keycodes
@@ -100,42 +44,7 @@
   thinkpad     us              =       thinkpad(us)
 
 ! model		=	geometry
-  microsoftelite	=	microsoft(elite)
- $msmodels	=	microsoft(natural)
-  dell101	=	dell(dell101)
-  dellm65	=	dell(dellm65)
-  latitude	=	dell(latitude)
-  flexpro	=	keytronic(FlexPro)
-  hp6000	=	hp(omnibook)
-  hpmini110	=	hp(mini110)
-  hpdv5		=	hp(dv5)
-  omnikey101	=	northgate(omnikey101)
-  sanwaskbkg3	=	sanwa(sanwaskbkg3)
  $pcmodels	=	pc(%m)
- $pcgeometries	=	pc(%m)
-  everex	=	everex(STEPnote)
-  thinkpad	=	thinkpad(intl)
-  thinkpad60	=	thinkpad(60)
-  thinkpadz60	=	thinkpad(60)
-  apex300	=	steelseries(apex300)
- $tmgeometries	=	typematrix(%m)
-  winbook	=	winbook(XP5)
-  pc98		=	nec(pc98)
- $applealu	=	macintosh(%m)
- $macbooks      =       macintosh(%m)
- $macs		=	macintosh(macintosh)
-  hhk		=	hhk(basic)
-  kinesis	=	kinesis(model100)
- $nokiamodels	=	nokia(%m)
-  sun_type6_jp          =   sun(type6jp)
-  sun_type6_usb         =   sun(type6)
-  sun_type6_euro_usb    =   sun(type6tuv)
-  sun_type6_jp_usb      =   sun(type6jp)
-  sun_type6_unix_usb    =   sun(type6unix)
-  sun_type7_jp_usb      =   sun(type6jp)
-  sun_type7_usb         =   sun(type7)
-  sun_type7_euro_usb    =   sun(type7tuv)
-  sun_type7_unix_usb    =   sun(type7unix)
   *		=       pc(pc104)
 
 
@@ -168,20 +77,7 @@
   *		*		=	complete
 
 ! model		=	types
-  $macs		=	complete+numpad(mac)
-  $applealu	=	complete+numpad(mac)
-  $nokiamodels	=	complete+nokia
   *		=	complete
   
 ! option	=	symbols
   terminate:ctrl_alt_bksp =	+terminate(ctrl_alt_bksp)
-
-! option	=	types
-  caps:internal			=	+caps(internal)
-  caps:internal_nocancel	=	+caps(internal_nocancel)
-  caps:shift			=	+caps(shift)
-  caps:shift_nocancel		=	+caps(shift_nocancel)
-  numpad:pc			=	+numpad(pc)
-  numpad:mac			=	+numpad(mac)
-  numpad:microsoft		=	+numpad(microsoft)
-  numpad:shift3       		=	+numpad(shift3)
