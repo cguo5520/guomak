@@ -30,15 +30,15 @@ xkb_symbols "guomak" {
 
   key <AD06> { [ j, J, NoSymbol, asciicircum ] };
   key <AD07> { [ l, L, NoSymbol, ampersand ] };
-  key <AD08> { [ u, U, NoSymbol, pipe ] };
+  key <AD08> { [ u, U, NoSymbol, bar ] };
   key <AD09> { [ y, Y, NoSymbol, exclam ] };
   key <AD10> { [ semicolon, colon, NoSymbol, numbersign ] };
 
   // This used to be bracketleft 
-  key <AD11> { [ BackSpace, Delete, BackSpace, BackSpace ] };
+  key <AD11> { [ BackSpace, Delete, BackSpace, Delete ] };
 
   // This used to be bracketright
-  key <AD12> { [ ISO_Level3_Shift, ISO_Level3_Shift, ISO_Level3_Shift, ISO_Level3_Shift ] };
+  key <AD12> { [ ISO_Level3_Shift, equal, NoSymbol, Tab ] };
 
   key <AC01> { [ a, A, less, 5 ] };
   key <AC02> { [ r, R, braceleft, 6 ] };
@@ -46,12 +46,12 @@ xkb_symbols "guomak" {
   key <AC04> { [ t, T, parenleft, 8 ] };
   key <AC05> { [ d, D, underscore, 9 ] };
   
-  key <AC06> { [ h, H, at ] };
+  key <AC06> { [ h, H, at, dollar ] };
   key <AC07> { [ n, N, parenright, Left ] };
   key <AC08> { [ e, E, bracketright, Down ] };
   key <AC09> { [ i, I, braceright, Up ] };
   key <AC10> { [ o, O, greater, Right ] };
-  key <AC11> { [ apostrophe, quotedbl, NoSymbol, grave ] };
+  key <AC11> { [ apostrophe, quotedbl, NoSymbol, Tab ] };
 
   key <AB01> { [ z, Z ] };
   key <AB02> { [ x, X ] };
@@ -60,13 +60,13 @@ xkb_symbols "guomak" {
   key <AB05> { [ b, B ] };
 
   key <AB06> { [ k, K ] };
+  key <AB07> { [ m, M ] };
   key <AB08> { [ comma, less ] };
   key <AB09> { [ period, greater ] };
   // Used to be slash, question
-  key <AB10> { [ ISO_Level5_Shift, question ] };
-  key <AB07> { [ m, M ] };
+  key <AB10> { [ ISO_Level5_Shift, question, NoSymbol, question ] };
 
-  key <SPCE> { [ space, NoSymbol, equal, NoSymbol ] };
+  key <SPCE> { [ space, space, equal, Escape ] };
   key <RTRN> { [ Return, Return ] };
 
   include "capslock(ctrl_modifier)"
@@ -74,11 +74,11 @@ xkb_symbols "guomak" {
   key <RTSH> { [ Shift_R, Shift_R, Shift_R, Shift_R ] };
   key <LFSH> { [ Shift_L, Shift_L, Shift_L, Shift_L ] };
 
-  include "level5(ralt_switch)"
+  include "level5(modifier_mapping)"
 
   replace key <TAB> {
-    type[Group1]="ONE_LEVEL",
-    symbols[Group1] = [ ISO_Level5_Shift ]
+    type[Group1]="FOUR_LEVEL_GUOMAK",
+    symbols[Group1] = [ ISO_Level5_Shift, ISO_Left_Tab, Tab, NoSymbol ]
   };
 
   replace key <LCTL> {

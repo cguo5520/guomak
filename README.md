@@ -48,6 +48,9 @@ Install karabiner, then move the karabiner.json file to ~/.config/karabiner/kara
 TODO:
 Unit tests with test files
 Polish up the mac setup. Probably need to add level2?
+Tab suggestions in bash are awkward now
+Task manager opens when I press escape
+
 
 ## FAQ
 Can I restart my keyboard without restarting my computer/display manager?
@@ -58,3 +61,7 @@ This does not work:
 ```
 udevadm trigger --subsystem-match=input --action=change
 ```
+
+## TODO
+
+Map @#$%^ better
