@@ -1,6 +1,8 @@
 # guomak
 Modified Colemak Linux for Developers
 
+Deprecated. See https://gitlab.com/cguo5520/dotfiles
+
 ## Linux
 To install:
 ```
